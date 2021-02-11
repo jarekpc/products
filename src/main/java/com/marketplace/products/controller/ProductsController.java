@@ -67,7 +67,9 @@ public class ProductsController {
     }
 
     @PutMapping("/products/{id}")
-    public ResponseEntity<?> updateProduct(@PathVariable Integer id, @RequestBody Product product, @RequestHeader("If-Math")Integer ifMatch){
+    public ResponseEntity<?> updateProduct(@PathVariable Integer id,
+                                           @RequestBody Product product,
+                                           @RequestHeader("If-Match") Integer ifMatch){
         Product existingProduct = productService.findById(id);
         if(existingProduct == null){
             return ResponseEntity.notFound().build();

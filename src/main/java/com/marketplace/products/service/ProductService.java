@@ -20,7 +20,7 @@ public class ProductService {
     }
 
     public Product save(Product product) {
-        LOGGER.info("Saveing new Product with name: {}", product.getName());
+        LOGGER.info("Saving new Product with name: {}", product.getName());
         product.setVersion(1);
         return productRepository.save(product);
     }
